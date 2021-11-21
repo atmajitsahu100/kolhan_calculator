@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        position:absolute;
+        justify-content: center;
+        text-align: center;
+        top: 12%;
+         left: 30%;
+    }
+    .title{
+        color: darkred;
+        background-color: aliceblue;
+        font-size: 50px;
+    }
+    input[type="button"]{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(186, 252, 7);
+         border: 2px solid rgb(34, 80, 13);
+    }
+    input[type="button"]:hover{
+      background-color: darkgreen;
+      cursor: pointer;
+    }
+    input[type="text"]{
+     background-color: bisque;
+      border: 2px solid black;
+      width: 98%;
+      height: 100%;
+
+    }
+    .tab1{
+        border: 2px solid black;
+        width: 500px;
+        height: 243px;
+    }
+    #result{
+        font-size: larger;
+    }
+</style>
+<body>
+    <div class="container">
+    <div class="title">  Kolhan Calculator  </div>
+    <table class="tab1" border="1">
+        <tr>
+            <td colspan="3"><input type="text" id="result"> </td>
+            <td><input type="button" value="c" onclick="clr()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="see('1')"> </td>
+            <td><input type="button" value="2" onclick="see('2')"> </td>
+            <td><input type="button" value="3" onclick="see('3')"> </td>
+            <td><input type="button" value="/" onclick="see('/')"> </td>
+        </tr>
+        <tr>
+			<td><input type="button" value="4" onclick="see('4')"/> </td>
+			<td><input type="button" value="5" onclick="see('5')"/> </td>
+			<td><input type="button" value="6" onclick="see('6')"/> </td>
+			<td><input type="button" value="+" onclick="see('+')"/> </td>
+		</tr>
+        <tr>
+			<td><input type="button" value="7" onclick="see('7')"/> </td>
+			<td><input type="button" value="8" onclick="see('8')"/> </td>
+			<td><input type="button" value="9" onclick="see('9')"/> </td>
+			<td><input type="button" value="-" onclick="see('-')"/> </td>
+		</tr>
+        <tr>
+            <td><input type="button" value="." onclick="see('.')"/> </td>
+			<td><input type="button" value="0" onclick="see('0')"/> </td>
+			<td><input type="button" value="=" onclick="calc('=')"/> </td>
+			<td><input type="button" value="*" onclick="see('*')"/> </td>
+		</tr>
+    </table>
+    <footer>
+        <p>&copy 2021 <b>Atmajit Sahoo</b></p>
+        </footer>
+</div>
+<script>
+function see(a){
+document.getElementById('result').value+=a;
+}
+function clr(){
+    document.getElementById('result').value="";
+}
+function calc(){
+    let b= document.getElementById('result').value;
+    let x=eval(b);
+    document.getElementById('result').value=x;
+}
+</script>
+</body>
+</html>
